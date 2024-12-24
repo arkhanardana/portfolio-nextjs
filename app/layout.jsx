@@ -5,7 +5,7 @@ const font = GeistSans;
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" className="scroll-smooth">
+		<html lang="en" className="scroll-smooth selection:bg-slate-800 selection:text-white">
 			<link rel="icon" href="/assets/logo.ico" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<body className={font.className}>{children}</body>
