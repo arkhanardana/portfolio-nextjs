@@ -3,6 +3,11 @@ import { GeistSans } from "geist/font/sans";
 
 const font = GeistSans;
 
+export const metadata = {
+	title: "Arkhan Ardana Portfolio",
+	description: "Portfolio website of Arkhan Ardana",
+};
+
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en" className="scroll-smooth selection:bg-slate-800 selection:text-white">
