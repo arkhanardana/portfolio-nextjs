@@ -40,7 +40,7 @@ export default function Hero() {
 					<h1 className="max-w-5xl text-3xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100">
 						Hi, I&apos;m <span>Arkhan Ardana</span>.
 					</h1>
-					<p className="max-w-4xl mt-4 text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300">
+					<p className="max-w-4xl mt-4 text-base sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300">
 						I&apos;m a passionate developer creating modern, interactive, and responsive web applications.
 					</p>
 				</BlurFade>
