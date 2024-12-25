@@ -16,7 +16,7 @@ export default function About() {
 			<AnimateParagraph
 				paragraph="Currently attending SMK Negeri 2 Yogyakarta as a 12th-grade student majoring in Sistem Informasi Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as well as developing software applications. Proficient in frontend technologies such as HTML, CSS, React, Next.js, and Tailwind CSS for creating responsive user interfaces, and backend technologies like Node.js, Express.js for building servers and APIs, with MySQL and MongoDB for database management. I am passionate about creating user-friendly and efficient web applications, and I am always eager to learn and grow in my field."
 				delay={0.5}
-				className="text-base leading-relaxed md:leading-loose sm:text-lg md:text-xl lg:text-2xl mx-16"
+				className="text-xs md:leading-loose md:text-xl lg:text-2xl mx-16"
 			/>
 		</div>
 	);
