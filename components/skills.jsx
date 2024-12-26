@@ -55,23 +55,29 @@ export default function Skills() {
 	};
 
 	return (
-		<div className="container mx-auto scroll-mt-0" id="skills">
+		<div
+			className="flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg max-w-full	 mx-auto mt-10 scroll-mt-0"
+			id="skills"
+		>
 			<div className="flex flex-col mx-10 md:mx-16 mt-20 mb-10 justify-between items-center">
-				<BlurIn word={"Skills"} className={"text-2xl sm:text-4xl font-bold md:text-5xl"}></BlurIn>
-				<div className="relative overflow-hidden">
+				<BlurIn
+					word={"Technologies and Tools"}
+					className={"mb-10 text-2xl sm:text-4xl font-bold md:text-5xl"}
+				></BlurIn>
+				<div className="relative w-full overflow-hidden">
 					<Marquee pauseOnHover className="[--duration:20s]">
 						{firstRow.map((skill) => (
-							<SkillsCard key={skill.username} {...skill} />
+							<SkillsCard key={skill.name} {...skill} />
 						))}
 					</Marquee>
 					<Marquee reverse pauseOnHover className="[--duration:20s]">
 						{secondRow.map((skill) => (
-							<SkillsCard key={skill.username} {...skill} />
+							<SkillsCard key={skill.name} {...skill} />
 						))}
 					</Marquee>
+					<div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
+					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
 				</div>
-				<div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
-				<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
 			</div>
 		</div>
 	);
