@@ -4,6 +4,7 @@ import BlurFade from "./ui/blur-fade";
 import DotPattern from "./ui/dot-pattern";
 import { FloatingNav } from "./ui/floating-navbar";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
+import Link from "next/link";
 
 export default function Hero() {
 	const navItems = [
@@ -16,8 +17,8 @@ export default function Hero() {
 			link: "#about",
 		},
 		{
-			name: "Contact",
-			link: "#contact",
+			name: "Skills",
+			link: "#skills",
 		},
 	];
 
@@ -26,7 +27,9 @@ export default function Hero() {
 			<FloatingNav navItems={navItems} />
 			<div className="flex items-center gap-2 py-6 mx-8">
 				<Braces />
-				<h1 className="text-xl font-bold z-10">Arkhan Ardana</h1>
+				<Link href="/" className="text-xl font-bold z-10">
+					Arkhan Ardana
+				</Link>
 			</div>
 			<DotPattern className="z-10" />
 			<section className="relative flex flex-col items-center justify-center text-center h-[95svh] w-full z-10">
