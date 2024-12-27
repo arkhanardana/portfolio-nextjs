@@ -40,7 +40,7 @@ export default function Hero() {
 					</BlurFade>
 				</Avatar>
 				<BlurFade delay={0.4} inView>
-					<h1 className="max-w-5xl text-3xl sm:text-6xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100">
+					<h1 className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-gray-800 dark:text-gray-100">
 						Hi, I&apos;m <span>Arkhan Ardana</span>.
 					</h1>
 					<p className="max-w-4xl mt-4 text-base sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300">

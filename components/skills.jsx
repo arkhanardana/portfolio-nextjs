@@ -5,8 +5,8 @@ import { cn } from "@/lib/utils";
 export default function Skills() {
 	const skills = [
 		{
-			name: "Jack",
-			img: "https://avatar.vercel.sh/jack",
+			name: "Next.js",
+			img: "/nextjs.png",
 		},
 		{
 			name: "Jill",
@@ -37,7 +37,7 @@ export default function Skills() {
 		return (
 			<figure
 				className={cn(
-					"relative w-64 cursor-pointer overflow-hidden rounded-xl border p-4",
+					"relative w-44 cursor-pointer overflow-hidden rounded-xl border p-3",
 					// light styles
 					"border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
 					// dark styles
@@ -56,7 +56,7 @@ export default function Skills() {
 
 	return (
 		<div
-			className="flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg max-w-full	 mx-auto mt-10 scroll-mt-0"
+			className="flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg md:max-w-4xl lg:max-w-[90rem] mx-auto mt-10 scroll-mt-0"
 			id="skills"
 		>
 			<div className="flex flex-col mx-10 md:mx-16 mt-20 mb-10 justify-between items-center">
