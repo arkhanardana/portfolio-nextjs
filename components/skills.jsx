@@ -1,6 +1,8 @@
+import Image from "next/image";
 import BlurIn from "./ui/blur-in";
 import Marquee from "./ui/marquee";
 import { cn } from "@/lib/utils";
+import GithubGraph from "./ui/githubgraph";
 
 export default function Skills() {
 	const skills = [
@@ -9,24 +11,40 @@ export default function Skills() {
 			img: "/nextjs.png",
 		},
 		{
-			name: "Jill",
-			img: "https://avatar.vercel.sh/jill",
+			name: "React.js",
+			img: "/react.png",
 		},
 		{
-			name: "John",
-			img: "https://avatar.vercel.sh/john",
+			name: "Javascript",
+			img: "/js.png",
 		},
 		{
-			name: "Jane",
-			img: "https://avatar.vercel.sh/jane",
+			name: "Node.js",
+			img: "/node.png",
 		},
 		{
-			name: "Jenny",
-			img: "https://avatar.vercel.sh/jenny",
+			name: "HTML",
+			img: "/html.png",
 		},
 		{
-			name: "James",
-			img: "https://avatar.vercel.sh/james",
+			name: "Typescript",
+			img: "/ts.png",
+		},
+		{
+			name: "Tailwind CSS",
+			img: "/tailwind.png",
+		},
+		{
+			name: "CSS",
+			img: "/css.png",
+		},
+		{
+			name: "MySQL",
+			img: "/sql.png",
+		},
+		{
+			name: "MongoDB",
+			img: "/mongo.png",
 		},
 	];
 
@@ -45,7 +63,7 @@ export default function Skills() {
 				)}
 			>
 				<div className="flex flex-row items-center gap-2">
-					<img className="rounded-full" width="32" height="32" alt="" src={img} />
+					<Image className="object-contain h-6 w-6" width="32" height="32" alt="" src={img} />
 					<div className="flex flex-col">
 						<figcaption className="text-sm font-medium dark:text-white">{name}</figcaption>
 					</div>
@@ -60,10 +78,7 @@ export default function Skills() {
 			id="skills"
 		>
 			<div className="flex flex-col mx-10 md:mx-16 mt-20 mb-10 justify-between items-center">
-				<BlurIn
-					word={"Technologies and Tools"}
-					className={"mb-10 text-2xl sm:text-4xl font-bold md:text-5xl"}
-				></BlurIn>
+				<BlurIn word={"My Skills"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"}></BlurIn>
 				<div className="relative w-full overflow-hidden">
 					<Marquee pauseOnHover className="[--duration:20s]">
 						{firstRow.map((skill) => (
@@ -78,6 +93,10 @@ export default function Skills() {
 					<div className="pointer-events-none absolute inset-y-0 left-0 w-1/3 bg-gradient-to-r from-white dark:from-background"></div>
 					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
 				</div>
+			</div>
+			<div className="flex flex-col w-full mx-auto mt-2">
+				<h1 className="text-xl md:text-2xl font-bold my-7">My Github Activity</h1>
+				<GithubGraph />
 			</div>
 		</div>
 	);
