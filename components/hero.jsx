@@ -23,7 +23,7 @@ export default function Hero() {
 	];
 
 	return (
-		<div className="relative">
+		<section className="relative">
 			<FloatingNav navItems={navItems} />
 			<div className="flex items-center gap-2 py-6 mx-8">
 				<Braces />
@@ -55,6 +55,6 @@ export default function Hero() {
 					/>
 				</div>
 			</section>
-		</div>
+		</section>
 	);
 }

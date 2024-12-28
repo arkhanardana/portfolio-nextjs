@@ -4,7 +4,7 @@ import AnimateParagraph from "./ui/animated-paragraph";
 
 export default function About() {
 	return (
-		<div className="container mx-auto scroll-mt-0" id="about">
+		<section className="container mx-auto scroll-mt-0" id="about">
 			<div className="flex mx-10 md:mx-16 mt-10 mb-10 justify-between items-center">
 				<BlurIn word={"About Me"} className={"text-3xl sm:text-4xl font-bold md:text-5xl"}></BlurIn>
 
@@ -18,6 +18,6 @@ export default function About() {
 				delay={0.5}
 				className="text-[0.9rem] leading-relaxed sm:text-base md:text-xl lg:text-[1.30rem] mx-10 md:mx-16"
 			/>
-		</div>
+		</section>
 	);
 }

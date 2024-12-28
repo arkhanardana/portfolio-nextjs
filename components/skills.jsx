@@ -73,7 +73,7 @@ export default function Skills() {
 	};
 
 	return (
-		<div
+		<section
 			className="flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg md:max-w-4xl lg:max-w-[90rem] mx-auto mt-10 scroll-mt-0"
 			id="skills"
 		>
@@ -94,6 +94,6 @@ export default function Skills() {
 					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
 				</div>
 			</div>
-		</div>
+		</section>
 	);
 }
