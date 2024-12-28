@@ -33,12 +33,39 @@ export default function ProjectSection() {
 			githubLink: "https://github.com/yourusername/weather-forecast-app",
 			websiteLink: "https://weather-forecast-app.expo.io",
 		},
+		{
+			id: 4,
+			title: "E-commerce Website",
+			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
+			image: "/placeholder.svg?height=200&width=300",
+			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
+			githubLink: "https://github.com/yourusername/ecommerce-project",
+			websiteLink: "https://ecommerce-project.vercel.app",
+		},
+		{
+			id: 5,
+			title: "E-commerce Website",
+			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
+			image: "/placeholder.svg?height=200&width=300",
+			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
+			githubLink: "https://github.com/yourusername/ecommerce-project",
+			websiteLink: "https://ecommerce-project.vercel.app",
+		},
+		{
+			id: 6,
+			title: "E-commerce Website",
+			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
+			image: "/placeholder.svg?height=200&width=300",
+			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
+			githubLink: "https://github.com/yourusername/ecommerce-project",
+			websiteLink: "https://ecommerce-project.vercel.app",
+		},
 	];
 
 	return (
-		<section className="pt-20 pb-16 bg-gray-50" id="projects">
+		<section className="pt-20 pb-16 bg-gray-50 scroll-mt-0" id="projects">
 			<div className="container mx-auto px-4">
-				<h2 className="text-5xl font-bold text-center mb-12">Recent Projects</h2>
+				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">Recent Projects</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project) => (
 						<Card key={project.id} className="flex flex-col">

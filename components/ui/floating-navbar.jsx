@@ -52,7 +52,7 @@ export const FloatingNav = ({ navItems, className }) => {
 							"relative dark:text-neutral-50 items-center flex space-x-1 text-black dark:hover:text-neutral-300 hover:text-neutral-500"
 						)}
 					>
-						<span className="block text-md">{navItem.name}</span>
+						<span className="block text-sm md:text-lg">{navItem.name}</span>
 					</Link>
 				))}
 				<button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">

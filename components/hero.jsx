@@ -20,6 +20,10 @@ export default function Hero() {
 			name: "Skills",
 			link: "#skills",
 		},
+		{
+			name: "Projects",
+			link: "#projects",
+		},
 	];
 
 	return (
