@@ -94,10 +94,6 @@ export default function Skills() {
 					<div className="pointer-events-none absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-white dark:from-background"></div>
 				</div>
 			</div>
-			<div className="flex flex-col w-full mx-auto mt-2">
-				<h1 className="text-xl md:text-2xl font-bold my-7">My Github Activity</h1>
-				<GithubGraph />
-			</div>
 		</div>
 	);
 }
