@@ -22,7 +22,6 @@ export default function ProjectSection() {
 			image: "/placeholder.svg?height=200&width=300",
 			technologies: ["React", "TypeScript", "Redux", "Material-UI"],
 			githubLink: "https://github.com/yourusername/task-management-app",
-			websiteLink: "https://task-management-app.vercel.app",
 		},
 		{
 			id: 3,
@@ -31,7 +30,6 @@ export default function ProjectSection() {
 			image: "/placeholder.svg?height=200&width=300",
 			technologies: ["React Native", "Expo", "OpenWeatherMap API"],
 			githubLink: "https://github.com/yourusername/weather-forecast-app",
-			websiteLink: "https://weather-forecast-app.expo.io",
 		},
 		{
 			id: 4,
@@ -79,7 +77,7 @@ export default function ProjectSection() {
 								/>
 							</CardHeader>
 							<CardContent className="flex-grow">
-								<CardTitle className="mb-2">{project.title}</CardTitle>
+								<CardTitle className="mb-2 text-xl">{project.title}</CardTitle>
 								<p className="text-gray-600 mb-4">{project.description}</p>
 								<div className="flex flex-wrap gap-2 mb-4">
 									{project.technologies.map((tech, index) => (
@@ -96,12 +94,14 @@ export default function ProjectSection() {
 										GitHub
 									</a>
 								</Button>
-								<Button variant="outline" size="sm" asChild>
-									<a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
-										<Globe className="mr-2 h-4 w-4" />
-										Website
-									</a>
-								</Button>
+								{project.websiteLink && (
+									<Button variant="outline" size="sm" asChild>
+										<a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
+											<Globe className="mr-2 h-4 w-4" />
+											Website
+										</a>
+									</Button>
+								)}
 							</CardFooter>
 						</Card>
 					))}
