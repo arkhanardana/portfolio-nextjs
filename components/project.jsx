@@ -8,55 +8,38 @@ export default function ProjectSection() {
 	const projects = [
 		{
 			id: 1,
-			title: "E-commerce Website",
-			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
-			githubLink: "https://github.com/yourusername/ecommerce-project",
-			websiteLink: "https://ecommerce-project.vercel.app",
+			title: "Creative Prompt",
+			description: "A SaaS website that provides a platform for user to create and share powered Prompt AI",
+			image: "/pro1.png",
+			technologies: ["Next.js", "Tailwind CSS", "MongoDB", "NextAuth"],
+			githubLink: "https://github.com/arkhanardana/prompt-creative.git",
+			websiteLink: "https://prompt-creative.vercel.app/",
 		},
 		{
 			id: 2,
-			title: "Task Management App",
-			description: "A task management application with drag-and-drop functionality and team collaboration features.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React", "TypeScript", "Redux", "Material-UI"],
-			githubLink: "https://github.com/yourusername/task-management-app",
+			title: "Websitein",
+			description: "A company profile website that provides information about the company and its services.",
+			image: "/pro2.png",
+			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "ShadcnUI"],
+			githubLink: "https://github.com/arkhanardana/websitein.git",
+			websiteLink: "https://websitein-dev.vercel.app/",
 		},
 		{
 			id: 3,
-			title: "Weather Forecast App",
-			description: "A weather forecast application that provides real-time weather data and 5-day forecasts.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React Native", "Expo", "OpenWeatherMap API"],
-			githubLink: "https://github.com/yourusername/weather-forecast-app",
+			title: "Satu Langkah",
+			description:
+				"A SaaS platform that connects users with investors, enabling users to find investment opportunities and investors to discover promising projects.",
+			image: "/pro3.png",
+			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "ShadcnUI"],
+			githubLink: "https://github.com/arkhanardana/satu-langkah.git",
 		},
 		{
 			id: 4,
-			title: "E-commerce Website",
-			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
-			githubLink: "https://github.com/yourusername/ecommerce-project",
-			websiteLink: "https://ecommerce-project.vercel.app",
-		},
-		{
-			id: 5,
-			title: "E-commerce Website",
-			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
-			githubLink: "https://github.com/yourusername/ecommerce-project",
-			websiteLink: "https://ecommerce-project.vercel.app",
-		},
-		{
-			id: 6,
-			title: "E-commerce Website",
-			description: "A fully functional e-commerce website with product listing, cart, and checkout features.",
-			image: "/placeholder.svg?height=200&width=300",
-			technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
-			githubLink: "https://github.com/yourusername/ecommerce-project",
-			websiteLink: "https://ecommerce-project.vercel.app",
+			title: "Es Teler Sultan",
+			description: "An UMKM profile website that provides information about the UMKM and its services.",
+			image: "/pro4.png",
+			technologies: ["HTML", "JavaScript", "Tailwind CSS"],
+			websiteLink: "https://estelersultannafadh.vercel.app/",
 		},
 	];
 
@@ -71,9 +54,10 @@ export default function ProjectSection() {
 								<Image
 									src={project.image}
 									alt={project.title}
-									width={300}
+									width={400}
 									height={200}
-									className="w-full h-48 object-cover rounded-t-lg"
+									className="w-full h-60 object-contain rounded-t-lg"
+									quality={100}
 								/>
 							</CardHeader>
 							<CardContent className="flex-grow">
@@ -88,12 +72,14 @@ export default function ProjectSection() {
 								</div>
 							</CardContent>
 							<CardFooter className="flex justify-between">
-								<Button variant="outline" size="sm" asChild>
-									<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-										<Github className="mr-2 h-4 w-4" />
-										GitHub
-									</a>
-								</Button>
+								{project.githubLink && (
+									<Button variant="outline" size="sm" asChild>
+										<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+											<Github className="mr-2 h-4 w-4" />
+											GitHub
+										</a>
+									</Button>
+								)}
 								{project.websiteLink && (
 									<Button variant="outline" size="sm" asChild>
 										<a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
