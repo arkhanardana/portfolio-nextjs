@@ -10,7 +10,7 @@ export default function ProjectSection() {
 			id: 1,
 			title: "Creative Prompt",
 			description: "A SaaS website that provides a platform for user to create and share powered Prompt AI",
-			image: "/pro1.png",
+			image: "/project1.png",
 			technologies: ["Next.js", "Tailwind CSS", "MongoDB", "NextAuth"],
 			githubLink: "https://github.com/arkhanardana/prompt-creative.git",
 			websiteLink: "https://prompt-creative.vercel.app/",
