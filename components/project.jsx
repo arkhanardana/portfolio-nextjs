@@ -36,10 +36,20 @@ export default function ProjectSection() {
 		{
 			id: 4,
 			title: "Es Teler Sultan",
-			description: "An UMKM profile website that provides information about the UMKM and its services.",
+			description:
+				"A profile website for an UMKM, highlighting its identity, services, and key information to introduce and promote its business effectively.",
 			image: "/pro4.png",
 			technologies: ["HTML", "JavaScript", "Tailwind CSS"],
 			websiteLink: "https://estelersultannafadh.vercel.app/",
+		},
+		{
+			id: 5,
+			title: "Al-Qorni",
+			description:
+				"A Profile Website for Majelis Ta'lim Al-Qorni, showcasing its activities, mission, and providing an introduction to what Al-Qorni stands for as a center for Islamic learning and community engagement.",
+			image: "/pro5.png",
+			technologies: ["HTML", "CSS", "JavaScript"],
+			websiteLink: "https://alqorni.vercel.app/",
 		},
 	];
 
