@@ -1,4 +1,5 @@
 import About from "@/components/about";
+import Contact from "@/components/contact";
 import GithubActivity from "@/components/github-activity";
 import Hero from "@/components/hero";
 import ProjectSection from "@/components/project";
@@ -12,6 +13,7 @@ export default function Home() {
 			<Skills />
 			<GithubActivity />
 			<ProjectSection />
+			<Contact />
 		</>
 	);
 }

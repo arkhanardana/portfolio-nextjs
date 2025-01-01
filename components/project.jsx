@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Globe } from "lucide-react";
+import { BorderBeam } from "./ui/border-beam";
 
 export default function ProjectSection() {
 	const projects = [
@@ -20,7 +21,7 @@ export default function ProjectSection() {
 			title: "Websitein",
 			description: "A company profile website that provides information about the company and its services.",
 			image: "/pro2.png",
-			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "ShadcnUI"],
+			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
 			githubLink: "https://github.com/arkhanardana/websitein.git",
 			websiteLink: "https://websitein-dev.vercel.app/",
 		},
@@ -30,7 +31,7 @@ export default function ProjectSection() {
 			description:
 				"A SaaS platform that connects users with investors, enabling users to find investment opportunities and investors to discover promising projects.",
 			image: "/pro3.png",
-			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "ShadcnUI"],
+			technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
 			githubLink: "https://github.com/arkhanardana/satu-langkah.git",
 		},
 		{
@@ -59,7 +60,8 @@ export default function ProjectSection() {
 				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">Recent Projects</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project) => (
-						<Card key={project.id} className="flex flex-col">
+						<Card key={project.id} className="flex flex-col relative">
+							<BorderBeam size={400} />
 							<CardHeader>
 								<Image
 									src={project.image}
@@ -86,7 +88,7 @@ export default function ProjectSection() {
 									<Button variant="outline" size="sm" asChild>
 										<a href={project.githubLink} target="_blank" rel="noopener noreferrer">
 											<Github className="mr-2 h-4 w-4" />
-											GitHub
+											Source
 										</a>
 									</Button>
 								)}
