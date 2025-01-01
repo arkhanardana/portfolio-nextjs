@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Globe } from "lucide-react";
 import { BorderBeam } from "./ui/border-beam";
+import BlurIn from "./ui/blur-in";
 
 export default function ProjectSection() {
 	const projects = [
@@ -57,11 +58,11 @@ export default function ProjectSection() {
 	return (
 		<section className="pt-20 pb-16 bg-gray-50 scroll-mt-0" id="projects">
 			<div className="container mx-auto px-4">
-				<h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-12">Recent Projects</h2>
+				<BlurIn word={"My Projects"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"}></BlurIn>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project) => (
 						<Card key={project.id} className="flex flex-col relative">
-							<BorderBeam size={400} />
+							<BorderBeam size={240} />
 							<CardHeader>
 								<Image
 									src={project.image}
