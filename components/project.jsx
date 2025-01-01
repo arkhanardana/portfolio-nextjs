@@ -3,7 +3,6 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Globe } from "lucide-react";
-import { BorderBeam } from "./ui/border-beam";
 import BlurIn from "./ui/blur-in";
 
 export default function ProjectSection() {
@@ -62,7 +61,6 @@ export default function ProjectSection() {
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project) => (
 						<Card key={project.id} className="flex flex-col">
-							{/* <BorderBeam size={240} /> */}
 							<CardHeader>
 								<Image
 									src={project.image}
