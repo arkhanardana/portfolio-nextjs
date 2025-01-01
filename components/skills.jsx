@@ -74,7 +74,7 @@ export default function Skills() {
 
 	return (
 		<section
-			className="flex h-[500px] w-full flex-col items-center justify-center overflow-hidden rounded-lg md:max-w-4xl lg:max-w-[90rem] mx-auto mt-10 scroll-mt-0"
+			className="flex w-full flex-col items-center justify-center overflow-hidden rounded-lg md:max-w-4xl lg:max-w-[90rem] mx-auto my-20 scroll-mt-0"
 			id="skills"
 		>
 			<div className="flex flex-col mx-10 md:mx-16 mt-20 mb-10 justify-between items-center">

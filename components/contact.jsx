@@ -36,7 +36,7 @@ export default function Contact() {
 			<div className="container mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{contactData.map((item, index) => (
-						<Card key={index} className="transition-all duration-300 cursor-pointer">
+						<Card key={index} className="transition-all duration-300 ">
 							<CardHeader>
 								<CardTitle className="flex items-center gap-2">
 									<item.icon className={`w-6 h-6 ${item.color}`} />
@@ -45,7 +45,11 @@ export default function Contact() {
 								<CardDescription>{item.description}</CardDescription>
 							</CardHeader>
 							<CardContent>
-								<Button variant="outline" className="w-full" onClick={() => window.open(item.link, "_blank")}>
+								<Button
+									variant="outline"
+									className="w-full cursor-pointer"
+									onClick={() => window.open(item.link, "_blank")}
+								>
 									Connect on {item.title}
 								</Button>
 							</CardContent>
