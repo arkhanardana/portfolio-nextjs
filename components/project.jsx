@@ -61,8 +61,8 @@ export default function ProjectSection() {
 				<BlurIn word={"My Projects"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"}></BlurIn>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 					{projects.map((project) => (
-						<Card key={project.id} className="flex flex-col relative">
-							<BorderBeam size={240} />
+						<Card key={project.id} className="flex flex-col">
+							{/* <BorderBeam size={240} /> */}
 							<CardHeader>
 								<Image
 									src={project.image}

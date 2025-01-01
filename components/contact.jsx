@@ -3,7 +3,7 @@
 import BlurIn from "./ui/blur-in";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Instagram, Github, Plus } from "lucide-react";
+import { Linkedin, Instagram, Github } from "lucide-react";
 
 export default function Contact() {
 	const contactData = [
@@ -36,14 +36,7 @@ export default function Contact() {
 			<div className="container mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{contactData.map((item, index) => (
-						<Card
-							key={index}
-							className="transition-all duration-300 cursor-pointer relative overflow-hidden group"
-						>
-							<Plus className="absolute top-2 left-2 w-4 h-4 text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-							<Plus className="absolute top-2 right-2 w-4 h-4 text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-							<Plus className="absolute bottom-2 left-2 w-4 h-4 text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-							<Plus className="absolute bottom-2 right-2 w-4 h-4 text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+						<Card key={index} className="transition-all duration-300 cursor-pointer">
 							<CardHeader>
 								<CardTitle className="flex items-center gap-2">
 									<item.icon className={`w-6 h-6 ${item.color}`} />
