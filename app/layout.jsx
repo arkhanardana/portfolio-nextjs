@@ -5,7 +5,23 @@ const font = GeistSans;
 
 export const metadata = {
 	title: "Arkhan Ardana Portfolio",
-	description: "Portfolio website of Arkhan Ardana",
+	description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
+	openGraph: {
+		title: "Arkhan Ardana Portfolio",
+		description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
+		url: "https://arkhanardana.my.id",
+		siteName: "Arkhan Ardana Portfolio",
+		images: [
+			{
+				url: "/preview-image.png",
+				width: 1200,
+				height: 630,
+				alt: "Preview of Arkhan Ardana's Portfolio Website",
+			},
+		],
+		locale: "en_US",
+		type: "website",
+	},
 };
 
 export default function RootLayout({ children }) {
