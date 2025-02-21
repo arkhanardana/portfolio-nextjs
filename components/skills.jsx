@@ -2,7 +2,6 @@ import Image from "next/image";
 import BlurIn from "./ui/blur-in";
 import Marquee from "./ui/marquee";
 import { cn } from "@/lib/utils";
-import GithubGraph from "./ui/githubgraph";
 
 export default function Skills() {
 	const skills = [

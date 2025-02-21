@@ -7,15 +7,15 @@ import ProjectSection from "@/components/project";
 import Skills from "@/components/skills";
 
 export default function Home() {
-	return (
-		<>
-			<Hero />
-			<About />
-			<Skills />
-			<GithubActivity />
-			<ProjectSection />
-			<Contact />
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Hero />
+      <About />
+      <Skills />
+      <GithubActivity />
+      <ProjectSection />
+      <Contact />
+      <Footer />
+    </>
+  );
 }
