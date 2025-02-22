@@ -75,13 +75,11 @@ export default function ProjectSection() {
                 />
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardTitle className="mb-2 text-xl">{project.title}</CardTitle>
+                <CardTitle className="mb-2 text-2xl">{project.title}</CardTitle>
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index} variant="secondary">
-                      {tech}
-                    </Badge>
+                    <Badge key={index}>{tech}</Badge>
                   ))}
                 </div>
               </CardContent>

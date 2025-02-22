@@ -16,7 +16,7 @@ export default function Footer() {
               <Image src={logo.url} alt="logo-gw" width={50} height={50} loading="lazy" />
               <span className="text-xl font-bold">Arkhan Ardana</span>
             </Link>
-            <p className="text-gray-400">Web Developer.</p>
+            <p className="text-gray-400">arkhanardanaok123@gmail.com</p>
           </div>
           <nav className="space-y-4 md:col-span-2">
             <ul className="grid grid-cols-2 gap-2">
