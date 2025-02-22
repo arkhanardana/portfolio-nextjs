@@ -35,7 +35,7 @@ export default function Contact() {
     <section className="container mx-auto pt-16 md:pt-0 pb-16 scroll-mt-0" id="contact">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center">
         <div className="hidden md:block">
-          <Lanyard position={[0, 0, 12]} gravity={[0, -30, 0]} />
+          <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
         </div>
         <div className="container px-4">
           <BlurIn word={"Reach me"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"} />
