@@ -56,7 +56,7 @@ export default function ProjectSection() {
   ];
 
   return (
-    <section className="pt-20 pb-16 bg-black scroll-mt-0" id="projects">
+    <section className="pt-20 pb-16 bg-[#171717] scroll-mt-0" id="projects">
       <div className="container mx-auto px-4">
         <BlurIn
           word={"Recent Projects"}
@@ -104,7 +104,7 @@ export default function ProjectSection() {
                   </Button>
                 )}
               </CardFooter>
-              <BorderBeam duration={6} size={200} />
+              <BorderBeam duration={10} size={300} />
             </Card>
           ))}
         </div>
