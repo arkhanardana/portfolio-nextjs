@@ -9,7 +9,7 @@ export default function Hero() {
   const navItems = [
     {
       name: "Home",
-      link: "/",
+      link: "#home",
     },
     {
       name: "About",
@@ -26,7 +26,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative h-screen bg-[#171717] w-full overflow-hidden">
+    <section className="relative h-screen bg-[#171717] w-full overflow-hidden" id="home">
       <FloatingNav navItems={navItems} />
       <div className="flex items-center gap-2 py-6 mx-8">
         <Braces color="#d1d5db" />
