@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, Globe } from "lucide-react";
 import BlurIn from "./ui/blur-in";
+import { BorderBeam } from "./ui/border-beam";
 
 export default function ProjectSection() {
   const projects = [
@@ -63,7 +64,7 @@ export default function ProjectSection() {
         ></BlurIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="flex flex-col">
+            <Card key={project.id} className="flex flex-col relative">
               <CardHeader>
                 <Image
                   src={project.image}
@@ -75,17 +76,19 @@ export default function ProjectSection() {
                 />
               </CardHeader>
               <CardContent className="flex-grow">
-                <CardTitle className="mb-2 text-2xl">{project.title}</CardTitle>
-                <p className="text-gray-600 mb-4">{project.description}</p>
+                <CardTitle className="mb-2 text-2xl text-white">{project.title}</CardTitle>
+                <p className="text-gray-100 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <Badge key={index}>{tech}</Badge>
+                    <Badge variant="secondary" key={index}>
+                      {tech}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>
               <CardFooter className="flex justify-between">
                 {project.githubLink && (
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="secondary" size="sm" asChild>
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Source
@@ -93,7 +96,7 @@ export default function ProjectSection() {
                   </Button>
                 )}
                 {project.websiteLink && (
-                  <Button variant="outline" size="sm" asChild>
+                  <Button variant="secondary" size="sm" asChild>
                     <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
                       <Globe className="mr-2 h-4 w-4" />
                       Website
@@ -101,6 +104,7 @@ export default function ProjectSection() {
                   </Button>
                 )}
               </CardFooter>
+              <BorderBeam duration={6} size={200} />
             </Card>
           ))}
         </div>

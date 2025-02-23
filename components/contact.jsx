@@ -27,7 +27,7 @@ export default function Contact() {
       description: "Check out my code repositories",
       icon: Github,
       link: "https://github.com/arkhanardana",
-      color: "text-gray-800",
+      color: "text-gray-100",
     },
   ];
 
@@ -44,15 +44,15 @@ export default function Contact() {
             {contactData.map((item, index) => (
               <Card key={index} className="transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
+                  <CardTitle className="flex items-center gap-2 text-white">
                     <item.icon className={`w-6 h-6 ${item.color}`} />
                     {item.title}
                   </CardTitle>
-                  <CardDescription>{item.description}</CardDescription>
+                  <CardDescription className="text-white">{item.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button
-                    variant="outline"
+                    variant="secondary"
                     className="w-full cursor-pointer"
                     onClick={() => window.open(item.link, "_blank")}
                   >
