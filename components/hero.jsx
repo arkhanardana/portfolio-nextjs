@@ -4,7 +4,6 @@ import BlurFade from "./ui/blur-fade";
 import { FloatingNav } from "./ui/floating-navbar";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
 import Link from "next/link";
-import { Meteors } from "./ui/meteors";
 
 export default function Hero() {
   const navItems = [
