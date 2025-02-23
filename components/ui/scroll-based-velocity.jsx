@@ -1,92 +1,95 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import {
-	motion,
-	useAnimationFrame,
-	useMotionValue,
-	useScroll,
-	useSpring,
-	useTransform,
-	useVelocity,
+  motion,
+  useAnimationFrame,
+  useMotionValue,
+  useScroll,
+  useSpring,
+  useTransform,
+  useVelocity,
 } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
 export const wrap = (min, max, v) => {
-	const rangeSize = max - min;
-	return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
-export function VelocityScroll({ text, default_velocity = 5, className }) {
-	function ParallaxText({ children, baseVelocity = 100, className }) {
-		const baseX = useMotionValue(0);
-		const { scrollY } = useScroll();
-		const scrollVelocity = useVelocity(scrollY);
-		const smoothVelocity = useSpring(scrollVelocity, {
-			damping: 50,
-			stiffness: 300,
-		});
+export function VelocityScroll({ text, defaultVelocity = 5, className, maxSkew = 30 }) {
+  function ParallaxText({ children, baseVelocity = 100, className, maxSkew = 30 }) {
+    const baseX = useMotionValue(0);
+    const { scrollY } = useScroll();
+    const scrollVelocity = useVelocity(scrollY);
+    const smoothVelocity = useSpring(scrollVelocity, {
+      damping: 50,
+      stiffness: 300,
+    });
 
-		const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
-			clamp: false,
-		});
+    const velocityFactor = useTransform(smoothVelocity, [-1000, 0, 1000], [-5, 0, 5], {
+      clamp: false,
+    });
 
-		const [repetitions, setRepetitions] = useState(1);
-		const containerRef = useRef(null);
-		const textRef = useRef(null);
+    const skew = useTransform(velocityFactor, [-5, 0, 5], [-maxSkew, 0, maxSkew]);
 
-		useEffect(() => {
-			const calculateRepetitions = () => {
-				if (containerRef.current && textRef.current) {
-					const containerWidth = containerRef.current.offsetWidth;
-					const textWidth = textRef.current.offsetWidth;
-					const newRepetitions = Math.ceil(containerWidth / textWidth) + 1;
-					setRepetitions(newRepetitions);
-				}
-			};
+    const [repetitions, setRepetitions] = useState(1);
+    const containerRef = useRef(null);
+    const textRef = useRef(null);
 
-			calculateRepetitions();
+    useEffect(() => {
+      const calculateRepetitions = () => {
+        if (containerRef.current && textRef.current) {
+          const containerWidth = containerRef.current.offsetWidth;
+          const textWidth = textRef.current.offsetWidth;
+          const newRepetitions = Math.ceil(containerWidth / textWidth) + 1;
+          setRepetitions(newRepetitions);
+        }
+      };
 
-			window.addEventListener("resize", calculateRepetitions);
-			return () => window.removeEventListener("resize", calculateRepetitions);
-		}, [children]);
+      calculateRepetitions();
 
-		const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
+      window.addEventListener("resize", calculateRepetitions);
+      return () => window.removeEventListener("resize", calculateRepetitions);
+    }, []);
 
-		const directionFactor = React.useRef(1);
-		useAnimationFrame((t, delta) => {
-			let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
 
-			if (velocityFactor.get() < 0) {
-				directionFactor.current = -1;
-			} else if (velocityFactor.get() > 0) {
-				directionFactor.current = 1;
-			}
+    const directionFactor = useRef(1);
+    useAnimationFrame((t, delta) => {
+      let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
 
-			moveBy += directionFactor.current * moveBy * velocityFactor.get();
+      if (velocityFactor.get() < 0) {
+        directionFactor.current = -1;
+      } else if (velocityFactor.get() > 0) {
+        directionFactor.current = 1;
+      }
 
-			baseX.set(baseX.get() + moveBy);
-		});
+      moveBy += directionFactor.current * moveBy * velocityFactor.get();
 
-		return (
-			<div className="w-full overflow-hidden whitespace-nowrap" ref={containerRef}>
-				<motion.div className={cn("inline-block", className)} style={{ x }}>
-					{Array.from({ length: repetitions }).map((_, i) => (
-						<span key={i} ref={i === 0 ? textRef : null}>
-							{children}
-							{""}
-						</span>
-					))}
-				</motion.div>
-			</div>
-		);
-	}
+      baseX.set(baseX.get() + moveBy);
+    });
 
-	return (
-		<section className="relative w-full">
-			<ParallaxText baseVelocity={default_velocity} className={className}>
-				{text}
-			</ParallaxText>
-		</section>
-	);
+    return (
+      <div className="w-full overflow-hidden whitespace-nowrap" ref={containerRef}>
+        <motion.div className={cn("inline-block", className)} style={{ x, skew }}>
+          {Array.from({ length: repetitions }).map((_, i) => (
+            <span key={i} ref={i === 0 ? textRef : null}>
+              {children}
+              {""}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    );
+  }
+
+  return (
+    <section className="relative w-full">
+      <ParallaxText baseVelocity={defaultVelocity} className={className} maxSkew={maxSkew}>
+        {text}
+      </ParallaxText>
+    </section>
+  );
 }

@@ -54,6 +54,7 @@ export default function Hero() {
             text="WEB DEVELOPER "
             default_velocity={5}
             className="text-center text-6xl font-bold tracking-[-0.02em] drop-shadow-sm text-[#fafafa] md:text-7xl lg:text-9xl md:leading-[5rem]"
+            maxSkew={35}
           />
         </div>
       </div>
