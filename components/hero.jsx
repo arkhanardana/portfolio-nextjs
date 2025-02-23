@@ -37,7 +37,7 @@ export default function Hero() {
       <div className="relative flex flex-col items-center justify-center text-center h-[95svh] w-full z-10">
         <Avatar className="mb-6 w-40 h-40 md:w-60 md:h-60">
           <BlurFade delay={0.4} inView>
-            <AvatarImage src="/khun.jpeg" />
+            <AvatarImage src="/khun.jpeg" alt="Arkhan Ardana" />
             <AvatarFallback>AA</AvatarFallback>
           </BlurFade>
         </Avatar>
