@@ -6,7 +6,7 @@ import Lenis from "@studio-freight/lenis";
 export default function LenisProvider() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.7,
+      duration: 0.4,
       easing: (t) => 1 - Math.pow(1 - t, 1),
       smooth: true,
       smoothTouch: false,

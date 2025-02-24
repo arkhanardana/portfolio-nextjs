@@ -1,6 +1,6 @@
 "use client";
 
-import { Braces, Download } from "lucide-react";
+import { Download, Terminal } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import BlurFade from "./ui/blur-fade";
 import { FloatingNav } from "./ui/floating-navbar";
@@ -31,8 +31,8 @@ export default function Hero() {
   return (
     <section className="relative h-screen bg-[#171717] w-full overflow-hidden" id="home">
       <FloatingNav navItems={navItems} />
-      <div className="flex items-center gap-2 py-6 mx-8">
-        <Braces color="#d1d5db" />
+      <div className="flex items-center gap-4 py-6 mx-8">
+        <Terminal color="#d1d5db" />
         <Link href="/" className="text-xl font-bold z-10 text-gray-300">
           Arkhan Ardana
         </Link>
