@@ -1,9 +1,12 @@
-import { Braces } from "lucide-react";
+"use client";
+
+import { Braces, Download } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import BlurFade from "./ui/blur-fade";
 import { FloatingNav } from "./ui/floating-navbar";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const navItems = [
@@ -49,6 +52,16 @@ export default function Hero() {
             I&apos;m a passionate developer creating modern, interactive, and responsive web applications.
           </p>
         </BlurFade>
+        <motion.a
+          href="/CV Arkhan Ardana.pdf"
+          download
+          className="inline-flex items-center px-6 py-3 mt-8 text-base font-medium text-[#171717] bg-[#fafafa] rounded-full hover:bg-gray-200 transition-colors duration-200"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Download className="w-5 h-5 mr-2" />
+          Download CV
+        </motion.a>
         <div className="relative w-full mx-auto mt-12">
           <VelocityScroll
             text="WEB DEVELOPER "
