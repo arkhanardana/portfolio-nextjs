@@ -1,4 +1,3 @@
-"use client";;
 import { useRef } from "react";
 import { AnimatePresence, motion, useInView } from "framer-motion";
 
@@ -12,7 +11,7 @@ export default function BlurFade({
   direction = "down",
   inView = false,
   inViewMargin = "-50px",
-  blur = "6px"
+  blur = "6px",
 }) {
   const ref = useRef(null);
   const inViewResult = useInView(ref, { once: true, margin: inViewMargin });
@@ -32,7 +31,7 @@ export default function BlurFade({
   };
   const combinedVariants = variant || defaultVariants;
   return (
-    (<AnimatePresence>
+    <AnimatePresence>
       <motion.div
         ref={ref}
         initial="hidden"
@@ -44,9 +43,10 @@ export default function BlurFade({
           duration,
           ease: "easeOut",
         }}
-        className={className}>
+        className={className}
+      >
         {children}
       </motion.div>
-    </AnimatePresence>)
+    </AnimatePresence>
   );
 }
