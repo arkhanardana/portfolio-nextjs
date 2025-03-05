@@ -1,7 +1,6 @@
 "use client";
 
 import { Download, Terminal } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import BlurFade from "./ui/blur-fade";
 import { FloatingNav } from "./ui/floating-navbar";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
