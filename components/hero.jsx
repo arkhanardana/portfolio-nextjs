@@ -7,6 +7,7 @@ import { FloatingNav } from "./ui/floating-navbar";
 import { VelocityScroll } from "./ui/scroll-based-velocity";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const navItems = [
@@ -38,12 +39,17 @@ export default function Hero() {
         </Link>
       </div>
       <div className="relative flex flex-col items-center justify-center text-center h-[95svh] w-full z-10">
-        <Avatar className="mb-6 w-40 h-40 md:w-60 md:h-60">
+        <div className="mb-6 w-40 h-40 md:w-60 md:h-60">
           <BlurFade delay={0.4} inView>
-            <AvatarImage src="/me.webp" alt="Arkhan Ardana" />
-            <AvatarFallback>AA</AvatarFallback>
+            <Image
+              src={"/me.webp"}
+              width={900}
+              height={900}
+              alt="me"
+              className="object-cover rounded-2xl grayscale hover:grayscale-0"
+            />
           </BlurFade>
-        </Avatar>
+        </div>
         <BlurFade delay={0.4} inView>
           <h1 className="max-w-5xl text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-[#fafafa]">
             Hi, I&apos;m <span>Arkhan Ardana</span>.
