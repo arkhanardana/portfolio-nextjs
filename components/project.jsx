@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Github, Globe } from "lucide-react";
+import { Github, ExternalLink } from "lucide-react";
 import BlurIn from "./ui/blur-in";
 import { BorderBeam } from "./ui/border-beam";
 
@@ -56,39 +56,51 @@ export default function ProjectSection() {
   ];
 
   return (
-    <section className="pt-20 pb-16 bg-[#171717] scroll-mt-0" id="projects">
+    <section className="pt-20 pb-16 bg-gradient-to-b from-[#171717] to-[#0f0f0f] scroll-mt-0" id="projects">
       <div className="container mx-auto px-4">
-        <BlurIn
-          word={"Recent Projects"}
-          className="text-white mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"
-        ></BlurIn>
+        <BlurIn word={"Recent Projects"} className="text-white mb-12 text-3xl sm:text-4xl font-bold md:text-5xl" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="flex flex-col relative">
-              <CardHeader>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  width={400}
-                  height={200}
-                  className="w-full h-60 object-contain rounded-t-lg"
-                  quality={100}
-                />
+            <Card
+              key={project.id}
+              className="flex flex-col relative overflow-hidden backdrop-blur-sm bg-gradient-to-br from-gray-300/20 to-gray-100/10 border transition-transform duration-300 hover:scale-[1.02] h-full"
+            >
+              <CardHeader className="p-0 overflow-hidden">
+                <div className="relative h-52 w-full overflow-hidden">
+                  <Image
+                    src={project.image || "/placeholder.svg"}
+                    alt={project.title}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    quality={100}
+                  />
+                </div>
               </CardHeader>
-              <CardContent className="flex-grow">
-                <CardTitle className="mb-2 text-2xl text-white">{project.title}</CardTitle>
-                <p className="text-gray-100 mb-4">{project.description}</p>
+
+              <CardContent className="flex-grow p-5">
+                <CardTitle className="mb-3 text-2xl text-white">{project.title}</CardTitle>
+                <p className="text-white/80 mb-5 text-sm leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <Badge variant="secondary" key={index}>
+                    <Badge
+                      variant="outline"
+                      key={index}
+                      className="bg-white/10 text-white/90 border-white/20 hover:bg-white/20"
+                    >
                       {tech}
                     </Badge>
                   ))}
                 </div>
               </CardContent>
-              <CardFooter className="flex justify-between">
+
+              <CardFooter className="flex justify-between gap-2 p-5 pt-0">
                 {project.githubLink && (
-                  <Button variant="secondary" size="sm" asChild>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
+                    asChild
+                  >
                     <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Source
@@ -96,14 +108,20 @@ export default function ProjectSection() {
                   </Button>
                 )}
                 {project.websiteLink && (
-                  <Button variant="secondary" size="sm" asChild>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="flex-1 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
+                    asChild
+                  >
                     <a href={project.websiteLink} target="_blank" rel="noopener noreferrer">
-                      <Globe className="mr-2 h-4 w-4" />
-                      Website
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
                     </a>
                   </Button>
                 )}
               </CardFooter>
+
               <BorderBeam duration={10} size={300} />
             </Card>
           ))}

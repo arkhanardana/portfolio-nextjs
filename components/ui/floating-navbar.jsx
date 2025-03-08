@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 import Lenis from "@studio-freight/lenis";
 
 export const FloatingNav = ({ navItems, className }) => {
