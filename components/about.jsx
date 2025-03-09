@@ -54,7 +54,7 @@ export default function About() {
       <div className="mx-4 sm:mx-10 md:mx-16 mt-10 mb-20 relative">
         <div className="flex justify-between items-center mb-12">
           <div className="flex items-center gap-4">
-            <BlurIn word={"About Me"} className={"text-3xl sm:text-4xl font-bold md:text-5xl"} />
+            <BlurIn word={"About Me"} className={"text-2xl font-bold md:text-5xl"} />
             <motion.div
               initial={{ scale: 0, rotate: -180 }}
               animate={{ scale: 1, rotate: 0 }}
@@ -69,10 +69,10 @@ export default function About() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex items-center gap-3 px-4 py-2 rounded-full bg-gradient-to-r from-gray-300/10 to-gray-500/10 border border-gray-400/20"
+            className="flex items-center gap-3 px-2 py-2 rounded-full bg-gradient-to-r from-gray-300/10 to-gray-500/10 border border-gray-400/20"
           >
             <GraduationCap className="h-5 w-5 text-gray-500" />
-            <span className="text-sm">SMK Negeri 2 Yogyakarta - SIJA</span>
+            <span className="text-sm">SMKN 2 Yogyakarta - SIJA</span>
           </motion.div>
         </div>
 
