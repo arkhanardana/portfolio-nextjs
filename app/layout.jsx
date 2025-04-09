@@ -5,11 +5,18 @@ const font = GeistSans;
 
 export const metadata = {
   title: "Arkhan Ardana Portfolio",
-  description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
+  description:
+    "Currently attending SMK Negeri 2 Yogyakarta as a 12th-grade student majoring in Sistem Informasi Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as well as developing software applications.",
   keywords: "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
+  authors: {
+    name: "Arkhan Ardana",
+    url: "https://arkhanardana.my.id",
+  },
+  robots: "index, follow",
   openGraph: {
     title: "Arkhan Ardana Portfolio",
-    description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
+    description:
+      "Currently attending SMK Negeri 2 Yogyakarta as a 12th-grade student majoring in Sistem Informasi Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as well as developing software applications.",
     url: "https://arkhanardana.my.id",
     siteName: "Arkhan Ardana Portfolio",
     images: [
@@ -22,6 +29,14 @@ export const metadata = {
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@arkhanardana",
+    title: "Arkhan Ardana - Portfolio",
+    description:
+      "Currently attending SMK Negeri 2 Yogyakarta as a 12th-grade student majoring in Sistem Informasi Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as well as developing software applications.",
+    images: "/preview-image.png",
   },
 };
 
