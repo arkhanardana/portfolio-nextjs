@@ -6,6 +6,7 @@ const font = GeistSans;
 export const metadata = {
   title: "Arkhan Ardana Portfolio",
   description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
+  keywords: "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
   openGraph: {
     title: "Arkhan Ardana Portfolio",
     description: "Explore the portfolio of Arkhan Ardana, showcasing projects, achievements, and skills.",
