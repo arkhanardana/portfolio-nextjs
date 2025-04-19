@@ -29,7 +29,10 @@ export default function Hero() {
   ];
 
   return (
-    <section className="relative h-screen bg-[#171717] w-full overflow-hidden" id="home">
+    <section
+      className="relative h-screen bg-[#171717] w-full overflow-hidden"
+      id="home"
+    >
       <FloatingNav navItems={navItems} />
       <div className="flex items-center gap-4 py-6 mx-8">
         <Terminal color="#d1d5db" />
@@ -38,7 +41,7 @@ export default function Hero() {
         </Link>
       </div>
       <div className="relative flex flex-col items-center justify-center text-center h-[95svh] w-full z-10">
-        <div className="mb-6 w-40 h-40 lg:w-52 lg:h-52">
+        <div className="mb-6 w-40 h-40 lg:w-44 lg:h-44">
           <BlurFade delay={0.4} inView>
             <Image
               src={"/me.webp"}
@@ -50,17 +53,18 @@ export default function Hero() {
           </BlurFade>
         </div>
         <BlurFade delay={0.4} inView>
-          <h1 className="max-w-5xl text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-[#fafafa]">
+          <h1 className="max-w-5xl text-3xl md:text-4xl font-extrabold tracking-tight text-[#fafafa]">
             Hi, I&apos;m <span>Arkhan Ardana</span>.
           </h1>
-          <p className="max-w-4xl mt-4 text-base sm:text-xl md:text-2xl text-[#fafafa]">
-            I&apos;m a passionate developer creating modern, interactive, and responsive web applications.
+          <p className="max-w-4xl mt-2 text-base text-[#fafafa]">
+            I&apos;m a passionate developer creating modern, interactive, and
+            responsive web applications.
           </p>
         </BlurFade>
         <motion.a
           href="/CV Arkhan Ardana.pdf"
           download
-          className="inline-flex items-center px-6 py-3 mt-8 text-sm md:text-base font-medium text-[#171717] bg-[#fafafa] rounded-full hover:bg-gray-200 transition-colors duration-200"
+          className="inline-flex items-center px-6 py-3 mt-4 text-sm font-medium text-[#171717] bg-[#fafafa] rounded-full hover:bg-gray-200 transition-colors duration-200"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
