@@ -7,7 +7,8 @@ export const metadata = {
   title: "Arkhan Ardana Portfolio",
   description:
     "Currently attending SMK Negeri 2 Yogyakarta as a 12th-grade student majoring in Sistem Informasi Jaringan dan Aplikasi (SIJA), which focuses on building, managing, and securing computer networks, as well as developing software applications.",
-  keywords: "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
+  keywords:
+    "Arkhan Ardana, arkhanardana, arkhan ardana, portfolio arkhan ardana, portfolio next js, portfolio arkhan",
   authors: {
     name: "Arkhan Ardana",
     url: "https://arkhanardana.my.id",
@@ -43,9 +44,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="selection:bg-slate-800 selection:text-white">
-      <link rel="icon" href="/favicon.png" type="image/png"/>
+      <link rel="icon" href="/favicon.png" type="image/png" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="google-site-verification" content="vddL4RIMEBuMyzipQ4Rlv-rQrepggxLZ-zDMNEELlHk" />
+      <meta
+        name="google-site-verification"
+        content="vddL4RIMEBuMyzipQ4Rlv-rQrepggxLZ-zDMNEELlHk"
+      />
       <body className={`${font.className}`}>
         <LenisProvider />
         {children}

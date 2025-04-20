@@ -2,8 +2,20 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, extend, useThree, useFrame } from "@react-three/fiber";
-import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei";
-import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from "@react-three/rapier";
+import {
+  useGLTF,
+  useTexture,
+  Environment,
+  Lightformer,
+} from "@react-three/drei";
+import {
+  BallCollider,
+  CuboidCollider,
+  Physics,
+  RigidBody,
+  useRopeJoint,
+  useSphericalJoint,
+} from "@react-three/rapier";
 import { MeshLineGeometry, MeshLineMaterial } from "meshline";
 
 const cardGLB = "/card.glb";
@@ -13,16 +25,23 @@ import * as THREE from "three";
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
-export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], fov = 20, transparent = true }) {
+export default function Lanyard({
+  position = [0, 0, 30],
+  gravity = [0, -40, 0],
+  fov = 20,
+  transparent = true,
+}) {
   return (
     <div className="relative z-0 w-full h-screen flex justify-center items-center transform scale-100 origin-center">
       <Canvas
         camera={{ position: position, fov: fov }}
         gl={{ alpha: transparent }}
-        onCreated={({ gl }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
+        onCreated={({ gl }) =>
+          gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)
+        }
       >
         <ambientLight intensity={Math.PI} />
-        <Physics interpolate gravity={gravity} timeStep={1 / 60}>
+        <Physics interpolate gravity={gravity} timeStep={1 / 120}>
           <Band />
         </Physics>
         <Environment blur={0.75}>
@@ -60,7 +79,7 @@ export default function Lanyard({ position = [0, 0, 30], gravity = [0, -40, 0], 
   );
 }
 
-function Band({ maxSpeed = 50, minSpeed = 10 }) {
+function Band({ maxSpeed = 50, minSpeed = 0 }) {
   const band = useRef(),
     fixed = useRef(),
     j1 = useRef(),
@@ -71,13 +90,24 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     ang = new THREE.Vector3(),
     rot = new THREE.Vector3(),
     dir = new THREE.Vector3();
-  const segmentProps = { type: "dynamic", canSleep: true, colliders: false, angularDamping: 4, linearDamping: 4 };
+  const segmentProps = {
+    type: "dynamic",
+    canSleep: true,
+    colliders: false,
+    angularDamping: 4,
+    linearDamping: 4,
+  };
   const { nodes, materials } = useGLTF(cardGLB);
   const texture = useTexture(lanyard);
   const { width, height } = useThree((state) => state.size);
   const [curve] = useState(
     () =>
-      new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()])
+      new THREE.CatmullRomCurve3([
+        new THREE.Vector3(),
+        new THREE.Vector3(),
+        new THREE.Vector3(),
+        new THREE.Vector3(),
+      ])
   );
   const [dragged, drag] = useState(false);
   const [hovered, hover] = useState(false);
@@ -101,8 +131,13 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     if (dragged) {
       vec.set(state.pointer.x, state.pointer.y, 0.5).unproject(state.camera);
       dir.copy(vec).sub(state.camera.position).normalize();
-      vec.add(dir.multiplyScalar(state.camera.position.length()));
+      const distance = state.camera.position.length();
+      vec.add(dir.multiplyScalar(distance));
+
+      // Wake up all physics bodies
       [card, j1, j2, j3, fixed].forEach((ref) => ref.current?.wakeUp());
+
+      // Apply smoother translation
       card.current?.setNextKinematicTranslation({
         x: vec.x - dragged.x,
         y: vec.y - dragged.y,
@@ -111,11 +146,20 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
     }
     if (fixed.current) {
       [j1, j2].forEach((ref) => {
-        if (!ref.current.lerped) ref.current.lerped = new THREE.Vector3().copy(ref.current.translation());
-        const clampedDistance = Math.max(0.1, Math.min(1, ref.current.lerped.distanceTo(ref.current.translation())));
+        if (!ref.current.lerped)
+          ref.current.lerped = new THREE.Vector3().copy(
+            ref.current.translation()
+          );
+        const clampedDistance = Math.max(
+          0.1,
+          Math.min(1, ref.current.lerped.distanceTo(ref.current.translation()))
+        );
         ref.current.lerped.lerp(
           ref.current.translation(),
-          delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
+          Math.min(
+            1,
+            delta * (minSpeed + clampedDistance * (maxSpeed - minSpeed))
+          )
         );
       });
       curve.points[0].copy(j3.current.translation());
@@ -145,17 +189,28 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
         <RigidBody position={[1.5, 0, 0]} ref={j3} {...segmentProps}>
           <BallCollider args={[0.1]} />
         </RigidBody>
-        <RigidBody position={[2, 0, 0]} ref={card} {...segmentProps} type={dragged ? "kinematicPosition" : "dynamic"}>
+        <RigidBody
+          position={[2, 0, 0]}
+          ref={card}
+          {...segmentProps}
+          type={dragged ? "kinematicPosition" : "dynamic"}
+        >
           <CuboidCollider args={[0.8, 1.125, 0.01]} />
           <group
             scale={2.25}
             position={[0, -1.2, -0.05]}
             onPointerOver={() => hover(true)}
             onPointerOut={() => hover(false)}
-            onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
+            onPointerUp={(e) => (
+              e.target.releasePointerCapture(e.pointerId), drag(false)
+            )}
             onPointerDown={(e) => (
               e.target.setPointerCapture(e.pointerId),
-              drag(new THREE.Vector3().copy(e.point).sub(vec.copy(card.current.translation())))
+              drag(
+                new THREE.Vector3()
+                  .copy(e.point)
+                  .sub(vec.copy(card.current.translation()))
+              )
             )}
           >
             <mesh geometry={nodes.card.geometry}>
@@ -168,7 +223,11 @@ function Band({ maxSpeed = 50, minSpeed = 10 }) {
                 metalness={0.8}
               />
             </mesh>
-            <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
+            <mesh
+              geometry={nodes.clip.geometry}
+              material={materials.metal}
+              material-roughness={0.3}
+            />
             <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
           </group>
         </RigidBody>
