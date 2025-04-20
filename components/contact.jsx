@@ -52,11 +52,11 @@ export default function Contact() {
       className="container mx-auto pt-16 md:pt-0 pb-16 scroll-mt-0"
       id="contact"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-        <div className="hidden md:block">
-          <Lanyard position={[0, 0, 12]} gravity={[0, -40, 0]} />
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        <div className="hidden md:block mb-0 md:mb-10">
+          <Lanyard position={[0, 0, 12]} gravity={[0, -30, 0]} />
         </div>
-        <div className="container px-4">
+        <div className="px-4">
           <BlurIn
             word={"Reach me"}
             className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"}
@@ -84,10 +84,15 @@ export default function Contact() {
                 <CardContent className="pt-2">
                   <Button
                     variant="secondary"
-                    className={`w-full cursor-pointer bg-white/10 hover:bg-white/20 hover:gap- transition-all duration-300 text-white border ${item.borderColor} ${item.hoverColor}`}
+                    className={`w-full cursor-pointer bg-white/10 hover:bg-white/20 transition-all duration-300 text-white border ${item.borderColor} ${item.hoverColor}`}
                   >
-                    <Link href={item.link}>Connect on {item.title} </Link>
-                    <ArrowRight className="w-4 h-4 ml-2"></ArrowRight>
+                    <Link
+                      href={item.link}
+                      className="flex items-center w-full justify-between"
+                    >
+                      <span>Connect on {item.title}</span>
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
