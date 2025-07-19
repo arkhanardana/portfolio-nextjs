@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
         name="google-site-verification"
         content="vddL4RIMEBuMyzipQ4Rlv-rQrepggxLZ-zDMNEELlHk"
       />
-      <body className={`${font.className}`}>
+      <body className={`${font.className}`} suppressHydrationWarning>
         <LenisProvider />
         {children}
       </body>

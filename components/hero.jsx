@@ -7,6 +7,7 @@ import { VelocityScroll } from "./ui/scroll-based-velocity";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Threads from "./ui/threads";
 
 export default function Hero() {
   const navItems = [
@@ -29,13 +30,13 @@ export default function Hero() {
   ];
 
   return (
-    <section
-      className="relative h-screen bg-[#171717] w-full overflow-hidden"
-      id="home"
-    >
+    <section className="relative h-screen w-full overflow-hidden bg-black" id="home">
+      <div className="absolute top-0 left-0 w-full h-full">
+        <Threads amplitude={1} distance={-0.4} />
+      </div>
       <FloatingNav navItems={navItems} />
       <div className="flex items-center gap-4 py-6 mx-8">
-        <Terminal color="#d1d5db" />
+        <Terminal color="#d1d5db" className="z-10" />
         <Link href="/" className="text-xl font-bold z-10 text-gray-300">
           Arkhan Ardana
         </Link>
@@ -53,12 +54,12 @@ export default function Hero() {
           </BlurFade>
         </div>
         <BlurFade delay={0.4} inView>
-          <h1 className="max-w-5xl text-3xl md:text-4xl font-extrabold tracking-tight text-[#fafafa]">
+          <h1 className="max-w-5xl text-3xl md:text-4xl font-extrabold tracking-tighter text-[#fafafa]">
             Hi, I&apos;m <span>Arkhan Ardana</span>.
           </h1>
-          <p className="max-w-4xl mt-2 text-base text-[#fafafa]">
-            I&apos;m a passionate developer creating modern, interactive, and
-            responsive web applications.
+          <p className="max-w-4xl mt-2 text-base text-[#fafafa] tracking-tight">
+            I&apos;m a passionate developer creating modern, interactive, and responsive web
+            applications.
           </p>
         </BlurFade>
         <motion.a
@@ -72,12 +73,14 @@ export default function Hero() {
           Download CV
         </motion.a>
         <div className="relative w-full mx-auto mt-12">
-          <VelocityScroll
-            text="WEB DEVELOPER "
-            default_velocity={5}
-            className="text-center text-6xl font-bold tracking-[-0.02em] drop-shadow-sm text-[#fafafa] lg:text-8xl md:leading-[5rem]"
-            maxSkew={35}
-          />
+          <BlurFade delay={0.4} inView>
+            <VelocityScroll
+              text="WEB DEVELOPER "
+              default_velocity={5}
+              className="text-center text-6xl font-bold tracking-[-0.02em] tracking-tighterdrop-shadow-sm text-[#fafafa] lg:text-8xl md:leading-[5rem]"
+              maxSkew={35}
+            />
+          </BlurFade>
         </div>
       </div>
     </section>
