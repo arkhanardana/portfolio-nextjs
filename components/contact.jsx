@@ -1,15 +1,9 @@
 "use client";
 
 import BlurIn from "./ui/blur-in";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-  CardContent,
-} from "@/components/ui/card";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Linkedin, Instagram, Github, ArrowRight } from "lucide-react";
+import { Linkedin, Instagram, Github, ArrowRight, ChevronUp, Sparkle } from "lucide-react";
 import Lanyard from "@/components/ui/lanyard";
 import Link from "next/link";
 
@@ -48,19 +42,16 @@ export default function Contact() {
   ];
 
   return (
-    <section
-      className="container mx-auto pt-16 md:pt-0 pb-16 scroll-mt-0"
-      id="contact"
-    >
+    <section className="container mx-auto pt-16 md:pt-0 pb-16 scroll-mt-0" id="contact">
       <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
         <div className="hidden md:block mb-0 md:mb-10">
           <Lanyard position={[0, 0, 12]} gravity={[0, -30, 0]} />
+          <h1 className="text-center flex items-center justify-center text-4xl font-bold tracking-tight gap-x-3 -mt-6 z-10">
+            Drag The Lanyard <Sparkle />
+          </h1>
         </div>
         <div className="px-4">
-          <BlurIn
-            word={"Reach me"}
-            className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"}
-          />
+          <BlurIn word={"Reach me"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl"} />
 
           <div className="grid grid-cols-1 gap-6">
             {contactData.map((item, index) => (
@@ -70,26 +61,19 @@ export default function Contact() {
               >
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center gap-3 text-white">
-                    <div
-                      className={`p-2 rounded-full ${item.bgGradient} border ${item.borderColor}`}
-                    >
+                    <div className={`p-2 rounded-full ${item.bgGradient} border ${item.borderColor}`}>
                       <item.icon className={`w-5 h-5 ${item.color}`} />
                     </div>
                     {item.title}
                   </CardTitle>
-                  <CardDescription className="text-white/80">
-                    {item.description}
-                  </CardDescription>
+                  <CardDescription className="text-white/80">{item.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="pt-2">
                   <Button
                     variant="secondary"
                     className={`w-full cursor-pointer bg-white/10 hover:bg-white/20 transition-all duration-300 text-white border ${item.borderColor} ${item.hoverColor}`}
                   >
-                    <Link
-                      href={item.link}
-                      className="flex items-center w-full justify-between"
-                    >
+                    <Link href={item.link} className="flex items-center w-full justify-between">
                       <span>Connect on {item.title}</span>
                       <ArrowRight className="w-4 h-4" />
                     </Link>

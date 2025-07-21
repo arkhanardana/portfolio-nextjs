@@ -32,7 +32,7 @@ export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black" id="home">
       <div className="absolute top-0 left-0 w-full h-full">
-        <Threads amplitude={1} distance={-0.4} />
+        <Threads amplitude={0.5} distance={-0.4} />
       </div>
       <FloatingNav navItems={navItems} />
       <div className="flex items-center gap-4 py-6 mx-8">
@@ -58,8 +58,7 @@ export default function Hero() {
             Hi, I&apos;m <span>Arkhan Ardana</span>.
           </h1>
           <p className="max-w-4xl mt-2 text-base text-[#fafafa] tracking-tight">
-            I&apos;m a passionate developer creating modern, interactive, and responsive web
-            applications.
+            I&apos;m a passionate developer creating modern, interactive, and responsive web applications.
           </p>
         </BlurFade>
         <motion.a
