@@ -76,36 +76,26 @@ export default function Footer() {
                 height={50}
                 className="rounded-full transition-transform duration-500 group-hover:scale-110"
               />
-              <span className="text-xl font-bold text-white">
-                Arkhan Ardana
-              </span>
+              <span className="text-xl font-bold text-white">Arkhan Ardana</span>
             </Link>
             <div className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
               <Mail />
-              <Link href="mailto:arkhanardanaok123@gmail.com">
-                arkhanardanaok123@gmail.com
-              </Link>
+              <Link href="mailto:arkhanardanaok123@gmail.com">arkhanardanaok123@gmail.com</Link>
             </div>
           </div>
 
           <nav className="md:col-span-2">
-            <h3 className="text-lg font-semibold mb-6 text-white">
-              Navigation
-            </h3>
+            <h3 className="text-lg font-semibold mb-6 text-white">Navigation</h3>
             <ul className="grid grid-cols-2 gap-y-3 gap-x-8">
               {navItems.map((item) => (
                 <li key={item}>
                   <Link
                     href={`#${item.toLowerCase()}`}
-                    onClick={(e) =>
-                      scrollToSection(e, `#${item.toLowerCase()}`)
-                    }
+                    onClick={(e) => scrollToSection(e, `#${item.toLowerCase()}`)}
                     className="group flex items-center transition-all duration-300 hover:translate-x-1 cursor-pointer"
                   >
                     <span className="w-0 h-[1px] bg-white mr-0 transition-all duration-300 group-hover:w-2 group-hover:mr-2"></span>
-                    <span className="text-gray-300 hover:text-white transition-colors duration-300">
-                      {item}
-                    </span>
+                    <span className="text-gray-300 hover:text-white transition-colors duration-300">{item}</span>
                   </Link>
                 </li>
               ))}
@@ -113,9 +103,8 @@ export default function Footer() {
           </nav>
 
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-white">
-              Connect With Me
-            </h3>
+            <h3 className="text-lg font-semibold text-white">Connect With Me</h3>
+
             <div className="flex space-x-5">
               {socialLinks.map((social) => (
                 <Link
@@ -141,10 +130,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center text-gray-500 text-sm mt-6">
-          <p>
-            &copy; {new Date().getFullYear()} Arkhan Ardana. All rights
-            reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} Arkhan Ardana. All rights reserved.</p>
         </div>
       </div>
     </footer>

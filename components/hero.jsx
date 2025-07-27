@@ -31,9 +31,6 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black" id="home">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <Threads amplitude={0.5} distance={-0.4} />
-      </div>
       <FloatingNav navItems={navItems} />
       <div className="flex items-center gap-4 py-6 mx-8">
         <Terminal color="#d1d5db" className="z-10" />
