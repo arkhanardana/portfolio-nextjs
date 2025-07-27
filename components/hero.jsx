@@ -7,7 +7,6 @@ import { VelocityScroll } from "./ui/scroll-based-velocity";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Threads from "./ui/threads";
 
 export default function Hero() {
   const navItems = [
