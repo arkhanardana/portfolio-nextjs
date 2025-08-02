@@ -1,11 +1,5 @@
 import Image from "next/image";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
@@ -18,8 +12,7 @@ export default function ProjectSection() {
     {
       id: 1,
       title: "Creative Prompt",
-      description:
-        "A SaaS website that provides a platform for user to create and share powered Prompt AI",
+      description: "A SaaS website that provides a platform for user to create and share powered Prompt AI",
       image: "/project1.png",
       technologies: ["Next.js", "Tailwind CSS", "MongoDB", "Auth.js"],
       githubLink: "https://github.com/arkhanardana/prompt-creative.git",
@@ -28,8 +21,7 @@ export default function ProjectSection() {
     {
       id: 2,
       title: "Websitein",
-      description:
-        "A company profile website that provides information about the company and its services.",
+      description: "A company profile website that provides information about the company and its services.",
       image: "/pro2.png",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Shadcn UI"],
       githubLink: "https://github.com/arkhanardana/websitein.git",
@@ -65,15 +57,9 @@ export default function ProjectSection() {
   ];
 
   return (
-    <section
-      className="pt-20 pb-20 bg-gradient-to-b from-[#171717] to-[#0f0f0f] scroll-mt-0"
-      id="projects"
-    >
+    <section className="pt-20 bg-[#171717] scroll-mt-0" id="projects">
       <div className="container mx-auto px-4">
-        <BlurIn
-          word={"Recent Projects"}
-          className="text-white mb-12 text-3xl sm:text-4xl font-bold md:text-5xl"
-        />
+        <BlurIn word={"Recent Projects"} className="text-white mb-12 text-3xl sm:text-4xl font-bold md:text-5xl" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <Card
@@ -93,12 +79,8 @@ export default function ProjectSection() {
               </CardHeader>
 
               <CardContent className="flex-grow p-5">
-                <CardTitle className="mb-3 text-2xl text-white">
-                  {project.title}
-                </CardTitle>
-                <p className="text-white/80 mb-5 text-sm leading-relaxed">
-                  {project.description}
-                </p>
+                <CardTitle className="mb-3 text-2xl text-white">{project.title}</CardTitle>
+                <p className="text-white/80 mb-5 text-sm leading-relaxed">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
                     <Badge
@@ -120,11 +102,7 @@ export default function ProjectSection() {
                     className="flex-1 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
                     asChild
                   >
-                    <Link
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href={project.githubLink} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-2 h-4 w-4" />
                       Source
                     </Link>
@@ -137,11 +115,7 @@ export default function ProjectSection() {
                     className="flex-1 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-white"
                     asChild
                   >
-                    <Link
-                      href={project.websiteLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href={project.websiteLink} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="mr-2 h-4 w-4" />
                       Live Demo
                     </Link>

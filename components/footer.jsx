@@ -59,8 +59,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-white overflow-hidden">
-      <div className="absolute inset-0 bg-black"></div>
+    <footer className="relative text-white overflow-hidden bg-[#171717]">
+      <div className="absolute inset-0 bg-[#171717]"></div>
       <div className="relative px-4 pt-16 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="space-y-4">

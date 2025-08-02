@@ -48,24 +48,37 @@ export const FloatingNav = ({ navItems, className }) => {
         animate={{ y: visible ? 0 : -100, opacity: visible ? 1 : 0 }}
         transition={{ duration: 0.2 }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-lg z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-white/20 rounded-full backdrop-blur-xl bg-white/10 shadow-2xl shadow-black/10 z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4",
           className
         )}
+        style={{
+          background: "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))",
+          backdropFilter: "blur(20px)",
+          WebkitBackdropFilter: "blur(20px)",
+          boxShadow: "0 8px 32px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
+        }}
       >
         {navItems.map((navItem, idx) => (
           <a
             key={`link-${idx}`}
             href={navItem.link}
             onClick={(e) => scrollToSection(e, navItem.link)}
-            className="relative dark:text-neutral-50 items-center flex space-x-1 text-black dark:hover:text-neutral-300 hover:text-neutral-500"
+            className="relative text-white/90 items-center flex space-x-1 hover:text-white transition-colors duration-200"
           >
-            <span className="block text-sm md:text-lg">{navItem.name}</span>
+            <span className="block text-sm md:text-lg font-medium">{navItem.name}</span>
           </a>
         ))}
         <a href="#contact" onClick={(e) => scrollToSection(e, "#contact")}>
-          <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+          <button
+            className="border border-white/30 text-sm font-medium relative text-white/90 hover:text-white px-4 py-2 rounded-full transition-all duration-200 hover:bg-white/10"
+            style={{
+              background: "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))",
+              backdropFilter: "blur(10px)",
+              WebkitBackdropFilter: "blur(10px)",
+            }}
+          >
             <span>Hire Me</span>
-            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent h-px" />
+            <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-cyan-400/60 to-transparent h-px" />
           </button>
         </a>
       </motion.div>
