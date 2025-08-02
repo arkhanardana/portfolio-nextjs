@@ -59,9 +59,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-white overflow-hidden bg-[#171717]">
-      <div className="absolute inset-0 bg-[#171717]"></div>
-      <div className="relative px-4 pt-16 pb-10 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <footer className="relative text-white bg-[#171717]">
+      <div className="relative pt-16 pb-10 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="space-y-4">
             <Link
@@ -126,7 +125,7 @@ export default function Footer() {
         </div>
 
         <div className="relative mt-12 pt-8">
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-3/4 h-px bg-white/20"></div>
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-full h-px bg-white/20"></div>
         </div>
 
         <div className="text-center text-gray-500 text-sm mt-6">
