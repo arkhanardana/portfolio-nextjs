@@ -20,7 +20,7 @@ export default function ProjectSection() {
     {
       title: "Technomart",
       description: "A simple E commerce website with admin dashboard and payment gateway",
-      image: "/techno.png",
+      image: "/technomart.png",
       technologies: ["Next.js", "Typescript", "Lucia", "Tailwind CSS", "Supabase", "Xendit"],
       githubLink: "https://github.com/arkhanardana/technomart",
     },
