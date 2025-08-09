@@ -10,7 +10,21 @@ import Link from "next/link";
 export default function ProjectSection() {
   const projects = [
     {
-      id: 1,
+      title: "Noto",
+      description: "A Todo List website using authentication feature",
+      image: "/noto.png",
+      technologies: ["Next.js", "Typescript", "Supabase", "Tailwind CSS", "Better Auth"],
+      githubLink: "https://github.com/arkhanardana/noto",
+      websiteLink: "https://noto-inky.vercel.app/",
+    },
+    {
+      title: "Technomart",
+      description: "A simple E commerce website with admin dashboard and payment gateway",
+      image: "/techno.png",
+      technologies: ["Next.js", "Typescript", "Lucia", "Tailwind CSS", "Supabase", "Xendit"],
+      githubLink: "https://github.com/arkhanardana/technomart",
+    },
+    {
       title: "Creative Prompt",
       description: "A SaaS website that provides a platform for user to create and share powered Prompt AI",
       image: "/project1.png",
@@ -19,7 +33,6 @@ export default function ProjectSection() {
       websiteLink: "https://prompt-creative.vercel.app/",
     },
     {
-      id: 2,
       title: "Websitein",
       description: "A company profile website that provides information about the company and its services.",
       image: "/pro2.png",
@@ -28,7 +41,6 @@ export default function ProjectSection() {
       websiteLink: "https://websitein-dev.vercel.app/",
     },
     {
-      id: 3,
       title: "Satu Langkah",
       description:
         "A SaaS platform that connects users with investors, enabling users to find investment opportunities and investors to discover promising projects.",
@@ -37,7 +49,6 @@ export default function ProjectSection() {
       githubLink: "https://github.com/arkhanardana/satu-langkah.git",
     },
     {
-      id: 4,
       title: "Es Teler Sultan",
       description:
         "A profile website for an UMKM, highlighting its identity, services, and key information to introduce and promote its business effectively.",
@@ -46,7 +57,6 @@ export default function ProjectSection() {
       websiteLink: "https://estelersultannafadh.vercel.app/",
     },
     {
-      id: 5,
       title: "Al-Qorni",
       description:
         "A Profile Website for Majelis Ta'lim Al-Qorni, showcasing its activities, mission, and providing an introduction to what Al-Qorni stands for as a center for Islamic learning and community engagement.",
@@ -61,19 +71,20 @@ export default function ProjectSection() {
       <div className="container mx-auto px-4">
         <BlurIn word={"Recent Projects"} className="text-white mb-12 text-3xl sm:text-4xl font-bold md:text-5xl" />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <Card
-              key={project.id}
+              key={index}
               className="flex flex-col relative overflow-hidden backdrop-blur-sm bg-gradient-to-br from-gray-300/20 to-gray-100/10 border transition-transform duration-300 hover:scale-[1.02] h-full"
             >
               <CardHeader className="p-0 overflow-hidden">
-                <div className="relative h-52 w-full overflow-hidden">
+                <div className="relative h-48 w-full overflow-hidden">
                   <Image
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                     fill
-                    className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     quality={100}
+                    sizes="(max-width: 768px) 100vw, 400px"
                   />
                 </div>
               </CardHeader>

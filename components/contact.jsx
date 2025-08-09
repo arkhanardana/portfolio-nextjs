@@ -42,15 +42,15 @@ export default function Contact() {
   ];
 
   return (
-    <section className="bg-[#171717] scroll-mt-0" id="contact">
-      <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+    <section className="bg-[#171717] scroll-mt-0 " id="contact">
+      <div className="grid grid-cols-1 md:grid-cols-2 items-center container mx-auto">
         <div className="hidden md:block mb-0 md:mb-10">
           <Lanyard position={[0, 0, 12]} gravity={[0, -30, 0]} />
           <h1 className="text-center flex items-center text-gray-50 justify-center text-4xl font-bold tracking-tight gap-x-3 -mt-10">
             Drag The Lanyard <Sparkle />
           </h1>
         </div>
-        <div className="container mx-auto px-4 lg:px-44 pt-16 md:pt-0 pb-16 scroll-mt-0">
+        <div className="container mx-auto px-4 pt-16 md:pt-0 pb-16 scroll-mt-0">
           <div>
             <BlurIn word={"Reach me"} className={"mb-10 text-3xl sm:text-4xl font-bold md:text-5xl text-gray-50"} />
 
