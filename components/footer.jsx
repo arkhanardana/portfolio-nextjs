@@ -59,14 +59,14 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative text-white bg-[#171717]">
+    <footer className="relative text-white bg-[#171717] px-6">
       <div className="relative pt-16 pb-10 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           <div className="space-y-4">
             <Link
               href="#home"
               onClick={(e) => scrollToSection(e, "#home")}
-              className="flex items-center space-x-3 group cursor-pointer"
+              className="flex items-center group cursor-pointer"
             >
               <Image
                 src={logo.url || "/placeholder.svg"}
@@ -75,7 +75,7 @@ export default function Footer() {
                 height={50}
                 className="rounded-full transition-transform duration-500 group-hover:scale-110"
               />
-              <span className="text-xl font-bold text-white">Arkhan Ardana</span>
+              <span className="text-xl font-bold text-white pl-2">Arkhan Ardana</span>
             </Link>
             <div className="flex items-center space-x-2 text-gray-400 hover:text-white transition-colors duration-300">
               <Mail />

@@ -67,7 +67,7 @@ export default function Skills() {
   };
 
   return (
-    <section className="relative h-[60vh] w-full overflow-hidden bg-[#171717]" id="home">
+    <section className="relative h-fit w-full overflow-hidden bg-[#171717]" id="home">
       <div
         className="flex w-full flex-col items-center justify-center overflow-hidden rounded-lg my-20 scroll-mt-0"
         id="skills"

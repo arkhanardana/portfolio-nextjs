@@ -47,7 +47,7 @@ export default function About() {
   };
 
   return (
-    <section className="relative h-screen md:h-[70vh] w-full lg:overflow-hidden bg-[#171717]" id="about">
+    <section className="relative h-fit w-full bg-[#171717] py-24 md:py-16" id="about">
       <div className="container mx-auto relative">
         <div className="mx-4 sm:mx-10 md:mx-16 mb-20 relative">
           <div className="flex justify-between items-center mb-12">
